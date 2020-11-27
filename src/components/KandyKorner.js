@@ -7,6 +7,7 @@ import { LocationList } from "./locations/LocationList";
 import { LocationProvider } from "./locations/LocationProvider";
 import { ProductProvider } from "./products/ProductProvider";
 import { ProductList } from "./products/ProductList";
+import { TypeProvider } from "./products/ProductTypesProvider";
 
 export const KandyKorner = () => (
   <>
@@ -14,8 +15,10 @@ export const KandyKorner = () => (
       <LocationList />
     </LocationProvider>
 
-    <ProductProvider>
-      <ProductList />
-    </ProductProvider>
+    <TypeProvider>
+      <ProductProvider>
+        <ProductList />
+      </ProductProvider>
+    </TypeProvider>
   </>
 );
