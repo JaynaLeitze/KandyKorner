@@ -31,6 +31,12 @@ export const EmployeeDetail = (props) => {
       <h3 className="employee__name">{employee.name}</h3>
       <h4>{employee.manager === true ? "Associate" : "Manager"}</h4>
       <div>Currently working at {location.name}</div>
+      <div>
+        {employee.fullTime === true
+          ? "Part Time Employee"
+          : "Full Time Employee"}
+      </div>
+      <div>${employee.hourlyRate} an hour</div>
     </section>
   );
 };
