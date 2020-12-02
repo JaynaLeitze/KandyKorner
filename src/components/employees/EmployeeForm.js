@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useEffect } from "react";
 import { EmployeeContext } from "./EmployeeProvider";
-import { LocationContext } from "./locations/LocationProvider";
+import { LocationContext } from "../locations/LocationProvider";
 
 export const EmployeeForm = (props) => {
   const { addEmployee } = useContext(EmployeeContext);
@@ -66,6 +66,62 @@ export const EmployeeForm = (props) => {
           </select>
         </div>
       </fieldset>
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="manager">Management:</label>
+          <select
+            defaultValue=""
+            name="manager"
+            ref={manager}
+            id="employeeManager"
+            className="form-control"
+          >
+            <option value="0">Management</option>
+            <option value="true">Manager</option>
+            <option value="false">Associate</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="fullTime">Hours: </label>
+          <select
+            defaultValue=""
+            name="fullTime"
+            ref={fullTime}
+            id="employeeFullTime"
+            className="form-control"
+          >
+            <option value="0">Hours</option>
+            <option value="true">Full Time</option>
+            <option value="false">Part Time</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="hourlyRate">Hourly Rate:</label>
+          <input
+            type="number"
+            id="employeeName"
+            ref={hourlyRate}
+            required
+            autoFocus
+            className="form-control"
+            placeholder="Hourly Rate"
+          />
+        </div>
+      </fieldset>
+      <button
+        type="submit"
+        onClick={(evt) => {
+          evt.preventDefault();
+          constructNewEmployee();
+        }}
+        className="btn btn-primary"
+      >
+        Save Employee
+      </button>
     </form>
   );
 };
